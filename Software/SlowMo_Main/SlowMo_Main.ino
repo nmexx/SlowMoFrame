@@ -23,17 +23,17 @@ int Timer1_FreqInBit, Timer1_OnTimeInBit, Timer0_FreqInBit;
 int Menu=0; // 0 Coil Freq; 1 LED Freq; 2 LED Pulsewidth
 
 void setup() {
-  if(EEPROM.read(EEPROM_Set_Bit) == 0)
-  {
-    EEPROM.write(EEPROM_Set_Bit,1);
-    EEPROM.write(EEPROM_Freq_Coil_Value,100);
-    EEPROM.write(EEPROM_Freq_LED_Value,100);
-    EEPROM.write(EEPROM_On_LED_Value,50);
-  }
+  //if(EEPROM.read(EEPROM_Set_Bit) == 1)
+  //{
+    //EEPROM.write(EEPROM_Set_Bit,1);
+    //EEPROM.write(EEPROM_Freq_Coil_Value,70);
+    //EEPROM.write(EEPROM_Freq_LED_Value,80);
+   //EEPROM.write(EEPROM_On_LED_Value,50);
+  //}
   
-  Timer0_FreqInHz = EEPROM.read(EEPROM_Freq_Coil_Value);
-  Timer1_FreqInHz = EEPROM.read(EEPROM_Freq_LED_Value);
-  Timer1_OnInProzent = EEPROM.read(EEPROM_On_LED_Value);
+  Timer0_FreqInHz = 80;//EEPROM.read(EEPROM_Freq_Coil_Value);
+  Timer1_FreqInHz = 80;//EEPROM.read(EEPROM_Freq_LED_Value);
+  Timer1_OnInProzent = 50;//EEPROM.read(EEPROM_On_LED_Value);
   
   pinMode(LED_RED, OUTPUT);
   pinMode(LED_GREEN, OUTPUT);
@@ -92,7 +92,7 @@ void loop() {
   if (Button_Klick(Button_Down) == 1){
     switch (Menu){
       case 0:
-      Timer0_FreqInHz--;
+      Timer0_Freq Hz--;
       //EEPROM.update(EEPROM_Freq_Coil_Value, Timer0_FreqInHz);
       break;
       case 1:
